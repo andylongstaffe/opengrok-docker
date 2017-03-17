@@ -1,0 +1,1 @@
+OPENGROK_INSTANCE_BASE=/Users/andrewlongstaffe/opengrok/instance-test JAVA_OPTS="$JAVA_OPTS -XX:-UseGCOverheadLimit -Xmx2048m" /Users/andrewlongstaffe/opengrok/opengrok-0.12.1.6/bin/OpenGrok index ~/opengrok/src-test
