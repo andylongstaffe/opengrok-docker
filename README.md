@@ -2,6 +2,7 @@ Starting the instance
 =====================
 
 > export OPENGROK_BASE=/Users/andrewlongstaffe/opengrok
+
 > docker run -d \
     -v $OPENGROK_BASE/src:/src \
     -v $OPENGROK_BASE/docker-instance:/data \
@@ -12,14 +13,25 @@ Starting the instance
     scue/docker-opengrok
 
 To index stuff
-> docker exec og /opengrok-0.12.1.5/bin/OpenGrok index /src
-Returns an error
+> docker exec -i /bin/bash -c "OPENGROK_CONFIGURATION=/etc/opengrok.cfg /opengrok-0.12.1.5/bin/OpenGrok update"
+
+To update sources
+host:
+> scripts/update_repos.sh
 
 Docker stuff
 ============
 
 Attach doesnt seem to work? Instead use:
 > docker exec -it og /bin/bash
+
+Run commands
+> docker exec og ls
+
+> docker exec -i og /bin/bash -c "ls"
+
+Locally
+=======
 
 Use a conf file:
 > OPENGROK_CONFIGURATION=/etc/opengrok.cfg /opengrok-0.12.1.5/bin/OpenGrok update
