@@ -49,6 +49,12 @@ To Do
 =====
 
 1) Install git, so history etc works
+
+> apt-get update && apt-get install git
+
+** Add this to docker image
+** Find how to restart webserver... (to test git more easily)
+
 2) Rename docker-instance to og-data
 3) Look at how to secure webapp (if needed)
 
