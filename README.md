@@ -1,6 +1,8 @@
+Starting the instance
+=====================
 
-export OPENGROK_BASE=/Users/andrewlongstaffe/opengrok
-docker run -d \
+> export OPENGROK_BASE=/Users/andrewlongstaffe/opengrok
+> docker run -d \
     -v $OPENGROK_BASE/src:/src \
     -v $OPENGROK_BASE/docker-instance:/data \
     -v $OPENGROK_BASE/docker-config/opengrok.cfg:/etc/opengrok.cfg \
@@ -20,7 +22,7 @@ Attach doesnt seem to work? Instead use:
 > docker exec -it og /bin/bash
 
 Use a conf file:
-OPENGROK_CONFIGURATION=/etc/opengrok.cfg /opengrok-0.12.1.5/bin/OpenGrok update
+> OPENGROK_CONFIGURATION=/etc/opengrok.cfg /opengrok-0.12.1.5/bin/OpenGrok update
 
 -d or -rm
 
@@ -36,10 +38,11 @@ To Do
 
 1) Install git, so history etc works
 2) Rename docker-instance to og-data
+3) Look at how to secure webapp (if needed)
 
 Notes
 ========
 
-* Search is available at localhost:8888/src
+* Search is available at http://localhost:8888/src
 * If you see index corruption type errors, then the easiest solution is wipe out the DATA-ROOT folder. ie - $OPENGROK_BASE/docker-instance
 * index = update
